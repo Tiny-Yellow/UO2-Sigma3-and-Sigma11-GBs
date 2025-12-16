@@ -2,3 +2,5 @@
 Computational details of 'Effect of fission products on tensile strength of UO2 Σ3 (111)/[1-10] and UO2 Σ11 (1-13)/[110] grain boundaries from first-principles study'
 
 The input files include POSCAR, KPOINTS, and INCAR. The two INCAR files are respectively the initial and final files for structural optimization with U Ramping method.
+
+The example folder includes both the input and output files of pure UO2 sigma3 grain boundary.
