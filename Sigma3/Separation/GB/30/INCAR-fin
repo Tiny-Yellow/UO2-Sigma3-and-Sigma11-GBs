@@ -1,0 +1,43 @@
+DFT+U Calculation
+LDAU   = .TRUE.        (Activate DFT+U)
+LDATYPE=  2            (Dudarev; only U-J matters)
+LDAUL  =  3 -1         (Orbitals for each species)
+LDAUU  =  4.5 0        (U for each species)
+LDAUJ  =  0.54 0       (J for each species)
+LMAXMIX=  6            (Mixing cut-off; 4-d, 6-f)
+GGA = PE
+ 
+Global Parameters
+ISTART =  1            (Read existing wavefunction; if there)
+ISPIN  =  2            (Non-Spin polarised DFT)
+MAGMOM =  12*2 12*-2 48*0
+ICHARG =  1         (Non-self-consistent: GGA/LDA band structures)
+LREAL  =  AUTO       (Projection operators: automatic)
+ENCUT  =  500        (Cut-off energy for plane wave basis set, in eV)
+LWAVE  = .TRUE.        (Write WAVECAR or not)
+LCHARG = .TRUE.        (Write CHGCAR or not)
+ADDGRID= .TRUE.        (Increase grid; helps GGA convergence)
+
+LPLANE = .TRUE.      (Real space distribution; supercells)
+NCORE = 8              (number of cores per node)
+LSCALU = .FALSE.
+NSIM = 4
+# NPAR   = 4           (Max is no. nodes; don't set for hybrids)
+KPAR   = 2           (Divides k-grid into separate groups)
+
+LORBIT = 10
+# ALGO   = FAST
+NELMDL = 1
+SYMPREC = 1E-10
+
+Lattice Relaxation
+NSW    =  200          (number of ionic steps)
+ISMEAR =  0            (gaussian smearing method )
+SIGMA  =  0.05
+IBRION =  1            (Algorithm: 0-MD; 1-Quasi-New; 2-CG)
+ISIF   =  2            (optimize atomic coordinates and lattice parameters)
+# POTIM  =  0.6
+EDIFF  =  1E-07
+EDIFFG = -1E-02      (Ionic convergence; eV/AA)
+PREC   =  Accurate     (Precision level)
+ 
